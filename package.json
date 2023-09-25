@@ -1,0 +1,11 @@
+{
+  "name": "com.urbanfox.ipuahpue",
+  "version": "1.0.0",
+  "displayName": "iPuahPue",
+  "documentationUrl": "https://github.com/huchi57/ipuahpue",
+  "author": {
+    "name": "Hu Chi",
+    "email": "huchi.hello@gmail.com"
+  },
+  "description": "Pua̍h-Pue, a triditional divination ritual practiced in many Asian regions, is the act of dropping two wodden pieces on the floor and interpreting the results based on the resting positions of the pieces. You can now try it in the Unity Editor."
+}
