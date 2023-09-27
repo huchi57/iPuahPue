@@ -26,12 +26,61 @@ namespace UrbanFox.iPuahPue.Editor
 
         private const float m_probabilityOfStanding = 1f / 350f;
 
+        private static GUIStyle m_divider;
+
         [SerializeField]
         private EditorData m_editorData;
 
         private Vector2 m_resultScroll;
 
-        private string EditorDataKey => $"{Application.companyName}/{Application.productName}/{nameof(m_editorData)}";
+        private static string EditorDataKey => $"{Application.companyName}/{Application.productName}/{nameof(m_editorData)}";
+
+        private static GUIStyle Divider
+        {
+            get
+            {
+                if (m_divider == null)
+                {
+                    var whiteTexture = new Texture2D(1, 1);
+                    whiteTexture.SetPixel(0, 0, Color.white);
+                    whiteTexture.Apply();
+                    m_divider = new GUIStyle();
+                    m_divider.normal.background = whiteTexture;
+                    m_divider.margin = new RectOffset(2, 2, 2, 2);
+                }
+                return m_divider;
+            }
+        }
+
+        private static void DrawHorizontalLine(float height, Color color)
+        {
+            Divider.fixedHeight = height;
+            var cachedGUIColor = GUI.color;
+            GUI.color = color;
+            GUILayout.Box(GUIContent.none, Divider);
+            GUI.color = cachedGUIColor;
+        }
+
+        private static void DrawColoredLabel(GUIContent content, Color color, params GUILayoutOption[] options)
+        {
+            var cachedGUIColor = GUI.color;
+            GUI.color = color;
+            GUILayout.Label(content, options);
+            GUI.color = cachedGUIColor;
+        }
+
+        private static bool ColoredButton(GUIContent content, Color color, params GUILayoutOption[] options)
+        {
+            var cachedBackgroundColor = GUI.backgroundColor;
+            GUI.backgroundColor = color;
+            if (GUILayout.Button(content, options))
+            {
+                GUI.backgroundColor = cachedBackgroundColor;
+                return true;
+            }
+            GUI.backgroundColor = cachedBackgroundColor;
+            return false;
+        }
 
         [MenuItem("OwO/Window/iPuahPue")]
         private static void ShowWindow()
@@ -65,7 +114,7 @@ namespace UrbanFox.iPuahPue.Editor
         private void OnGUI()
         {
             GUILayout.Label("¤ß¸Û«hÆF...", EditorStyles.boldLabel);
-            m_editorData.SearchText = EditorGUILayout.TextField(m_editorData.SearchText, GUILayout.Height(100));
+            m_editorData.SearchText = EditorGUILayout.TextArea(m_editorData.SearchText, GUILayout.Height(50));
             if (GUILayout.Button("Throw"))
             {
                 var isStanding = UnityEngine.Random.Range(0f, 1f) < m_probabilityOfStanding;
@@ -96,14 +145,15 @@ namespace UrbanFox.iPuahPue.Editor
                     var result = m_editorData.NewFirst ? m_editorData.Results[m_editorData.Results.Count - 1 - i] : m_editorData.Results[i];
                     if (result.IsStanding)
                     {
-                        var cachedContentColor = GUI.contentColor;
-                        GUI.contentColor = Color.yellow;
-                        GUILayout.Label($"*****: {result.Question}");
-                        GUI.contentColor = cachedContentColor;
+                        DrawColoredLabel(new GUIContent($"*****: {result.Question}"), Color.yellow);
                     }
                     else
                     {
                         GUILayout.Label($"{(result.PueA ? "+" : "-")}, {(result.PueB ? "+" : "-")}: {result.Question}");
+                    }
+                    if (i < m_editorData.Results.Count - 1)
+                    {
+                        DrawHorizontalLine(1, Color.gray);
                     }
                 }
             }
@@ -113,13 +163,12 @@ namespace UrbanFox.iPuahPue.Editor
             }
             EditorGUILayout.EndScrollView();
 
-            var cachedBackgroundColor = GUI.backgroundColor;
-            GUI.backgroundColor = Color.red;
-            if (GUILayout.Button("Clear History"))
+            GUI.enabled = m_editorData.Results != null && m_editorData.Results.Count > 0;
+            if (ColoredButton(new GUIContent("Clear History"), Color.red))
             {
                 m_editorData.Results = new List<PueResult>();
             }
-            GUI.backgroundColor = cachedBackgroundColor;
+            GUI.enabled = true;
         }
     }
 }
