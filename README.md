@@ -64,3 +64,8 @@ However, in very rare circumstances, Pue blocks might rest at unusal positions, 
 5. **Concentric Answer (near 0%):** When a Pue block overlays on the other.
 
 Different regions intepret these results differently, but they are usually considered miracles.
+
+# Disclaimer
+本工具僅為娛樂用途使用，產生之擲筊結果僅供參考。
+
+This tool is for entertainment purpopses only. The results of the divination are not meant to be taken as absolute answers.
