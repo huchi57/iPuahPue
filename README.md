@@ -14,7 +14,7 @@ Practice the Pua̍h-Pue ritual guide you in your Unity Editor.
 - 直接安裝
   - 直接下載本專案，並放在 Unity 專案的 Asset 資料夾底下。
  
-完成安裝以後，選擇 'OwO' > 'Window' > 'iPuahPue' 來開啟 **iPuahPue** 視窗。
+完成安裝以後，選擇 `OwO` > `Window` > `iPuahPue` 來開啟 **iPuahPue** 視窗。
 
 # 功能/特色
 - 寫下欲詢問的問題之後，點選「擲筊」按鈕以丟出筊杯。
