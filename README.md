@@ -5,6 +5,9 @@ Practice the Pua̍h-Pue ritual guide you in your Unity Editor.
 
 [English description below.](#installation-and-quick-start)
 
+| <img src="Images/img-ipuahpue-example-zh.png" alt="Mandarin-screenshot" width="400"> | <img src="Images/img-ipuahpue-example-en.png" alt="English-screenshot" width="400"> |
+| --- | --- |
+
 # 安裝方式與快速入門
 以下有幾種安裝 **iPuahPue** 的方法：
 - Unity Package Manager
