@@ -55,7 +55,7 @@ namespace UrbanFox.iPuahPue.Editor
 
         private Vector2 m_resultScroll;
 
-        private static string EditorDataKey => $"{Application.companyName}/{Application.productName}/{nameof(m_editorData)}";
+        private static string EditorDataKey => $"{Application.companyName}/{Application.productName}/{typeof(PuahPueWindow).Name}/{nameof(m_editorData)}";
 
         private static GUIStyle Divider
         {
