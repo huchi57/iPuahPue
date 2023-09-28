@@ -8,7 +8,7 @@ Practice the Pua̍h-Pue ritual guide you in your Unity Editor.
 # 安裝方式與快速入門
 以下有幾種安裝 **iPuahPue** 的方法：
 - Unity Package Manager
-  - 在 Unity 中，選擇 'Window' > 'Package Manager'。
+  - 在 Unity 中，選擇 `Window` > `Package Manager`。
   - 在 Package Manager 視窗中，點選左上角的加號（＋）符號，並點選 `Add package from git URL...`。
   - 貼上以下連結： `https://github.com/huchi57/iPuahPue.git`，然後點選 `Add`。
 - 直接安裝
