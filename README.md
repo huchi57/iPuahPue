@@ -1,7 +1,7 @@
 # iPuahPue
 不知道 bug 怎麼修嗎？想請問神明開發建議嗎？不用擔心，有了 **iPuahPue** ，您也可以在 Unity 裡擲筊了。
 
-Practice the Pua̍h-Pue ritual guide you in your Unity Editor.
+Practice the Pua̍h-Pue ritual guide you in your Unity Editor, and let the divine answer guide you.
 
 [English description below.](#installation-and-quick-start)
 
