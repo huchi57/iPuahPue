@@ -5,7 +5,7 @@ Practice the Pua̍h-Pue ritual guide you in your Unity Editor, and let the divin
 
 [English description below.](#installation-and-quick-start)
 
-| <img src="Images/img-ipuahpue-example-zh.png" alt="Mandarin-screenshot" width="400"> | <img src="Images/img-ipuahpue-example-en.png" alt="English-screenshot" width="400"> |
+| <img src="Images/img-ipuahpue-example-zh.jpg" alt="Mandarin-screenshot" width="400"> | <img src="Images/img-ipuahpue-example-en.jpg" alt="English-screenshot" width="400"> |
 | --- | --- |
 
 # 安裝方式與快速入門

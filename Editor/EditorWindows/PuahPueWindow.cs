@@ -190,11 +190,11 @@ namespace UrbanFox.iPuahPue.Editor
             }
             GUILayout.EndHorizontal();
 
+            m_resultScroll = EditorGUILayout.BeginScrollView(m_resultScroll);
             if (m_editorData.Results != null && m_editorData.Results.Count > 0)
             {
                 EditorGUILayout.HelpBox(PuahPueLocalization.Localize("HoverForExplaination", m_editorData.Language), MessageType.None);
 
-                m_resultScroll = EditorGUILayout.BeginScrollView(m_resultScroll);
                 for (int i = 0; i < m_editorData.Results.Count; i++)
                 {
                     var result = m_editorData.NewFirst ? m_editorData.Results[m_editorData.Results.Count - 1 - i] : m_editorData.Results[i];
@@ -220,12 +220,12 @@ namespace UrbanFox.iPuahPue.Editor
                         DrawHorizontalLine(1, Color.gray);
                     }
                 }
-                EditorGUILayout.EndScrollView();
             }
             else
             {
                 EditorGUILayout.HelpBox(PuahPueLocalization.Localize("NoHistory", m_editorData.Language), MessageType.Info);
             }
+            EditorGUILayout.EndScrollView();
 
             GUI.enabled = m_editorData.Results != null && m_editorData.Results.Count > 0;
             if (ColoredButton(new GUIContent(PuahPueLocalization.Localize("ClearHistory", m_editorData.Language)), Color.red))
